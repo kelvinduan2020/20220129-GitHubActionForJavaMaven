@@ -32,8 +32,8 @@ jobs:
     - name: Build & push Docker image
       run: |
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ docker_image }}:${{ docker_tag }} .
-        docker push ${{ secrets.DOCKER_USERNAME }}/${{ docker_image }}:${{ docker_tag }}
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ env.docker_image }}:${{ env.docker_tag }} .
+        docker push ${{ secrets.DOCKER_USERNAME }}/${{ env.docker_image }}:${{ env.docker_tag }}
     
 #     - name: Build & push Docker image  
 #       uses: mr-smithers-excellent/docker-build-push@v5
